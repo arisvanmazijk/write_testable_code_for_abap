@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <asx:abap version="1.0" xmlns:asx="http://www.sap.com/abapxml">
-<asx:values>
-<DATA>
-<MASTER_LANGUAGE>E</MASTER_LANGUAGE>
-<STARTING_FOLDER>/</STARTING_FOLDER>
-<FOLDER_LOGIC>PREFIX</FOLDER_LOGIC>
-<IGNORE>
-<item>/.gitignore</item>
-<item>/LICENSE</item>
-<item>/README.md</item>
-<item>/package.json</item>
-<item>/.travis.yml</item>
-</IGNORE>
-</DATA>
-</asx:values>
+  <asx:values>
+    <DATA>
+      <MASTER_LANGUAGE>E</MASTER_LANGUAGE>
+      <STARTING_FOLDER>/</STARTING_FOLDER>
+      <FOLDER_LOGIC>PREFIX</FOLDER_LOGIC>
+      <IGNORE>
+        <item>/.gitignore</item>
+        <item>/LICENSE</item>
+        <item>/README.md</item>
+        <item>/package.json</item>
+        <item>/.travis.yml</item>
+      </IGNORE>
+    </DATA>
+  </asx:values>
 </asx:abap>
