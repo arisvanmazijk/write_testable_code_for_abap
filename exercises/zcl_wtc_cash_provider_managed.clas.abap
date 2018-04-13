@@ -1,27 +1,28 @@
-class ZCL_WTC_CASH_PROVIDER_MANAGED definition
-  public
-  final
-  create public .
+CLASS zcl_wtc_cash_provider_managed DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PRIVATE
+  GLOBAL FRIENDS zcl_wtc_factory.
 
-public section.
+  PUBLIC SECTION.
 
-  interfaces ZIF_WTC_CASH_PROVIDER .
+    INTERFACES zif_wtc_cash_provider .
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS ZCL_WTC_CASH_PROVIDER_MANAGED IMPLEMENTATION.
+CLASS zcl_wtc_cash_provider_managed IMPLEMENTATION.
 
 
-  METHOD ZIF_WTC_CASH_PROVIDER~get_coins.
+  METHOD zif_wtc_cash_provider~get_coins.
     "not usable right now
     ASSERT 0 = 1.
   ENDMETHOD.
 
 
-  METHOD ZIF_WTC_CASH_PROVIDER~get_notes.
+  METHOD zif_wtc_cash_provider~get_notes.
     "not usable right now
     ASSERT 0 = 1.
   ENDMETHOD.
