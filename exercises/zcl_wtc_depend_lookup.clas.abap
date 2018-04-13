@@ -25,8 +25,7 @@ CLASS ZCL_WTC_DEPEND_LOOKUP IMPLEMENTATION.
 
 
   METHOD get_amount_in_coins.
-    DATA(cash_provider) = CAST ZIF_WTC_CASH_PROVIDER( NEW ZCL_WTC_CASH_PROVIDER_MANAGED( ) ).
-    DATA(notes) = cash_provider->get_notes( i_currency = 'EUR' ).
+    DATA(notes) = zcl_wtc_factory=>get_cash_provider( )->get_notes( i_currency = 'EUR' ).
     SORT notes BY amount ASCENDING.
 
     r_value = COND #( WHEN i_amount <= 0
@@ -41,5 +40,4 @@ CLASS ZCL_WTC_DEPEND_LOOKUP IMPLEMENTATION.
       r_value = i_amount - r_value.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.
