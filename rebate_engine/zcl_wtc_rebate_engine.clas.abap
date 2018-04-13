@@ -59,35 +59,3 @@ CLASS zcl_wtc_rebate_engine IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 ENDCLASS.
-
-
-
-CLASS ZCL_WTC_REBATE_ENGINE IMPLEMENTATION.
-
-
-  METHOD compute_rebate.
-    LOOP AT c_cart_items REFERENCE INTO DATA(cart_item).
-      LOOP AT m_rules INTO DATA(rule).
-        DATA(rebate_amount) = rule->apply( i_cart_item = cart_item->* ).
-        IF rebate_amount > 0.
-          cart_item->rebate_amount = rebate_amount.
-        ENDIF.
-      ENDLOOP.
-    ENDLOOP.
-  ENDMETHOD.
-
-
-  METHOD constructor.
-    IF i_rules IS NOT INITIAL.
-      m_rules = i_rules.
-    ELSE.
-      "TODO: should be moved to a rules provider class
-      m_rules = VALUE #( ( NEW ZCL_WTC_RULE_ITEM_ID( i_item_id = 1  i_req_quantity = 2  i_rebate = 5 ) ) ).
-    ENDIF.
-  ENDMETHOD.
-
-
-  METHOD get_total_rebate_amount.
-
-  ENDMETHOD.
-ENDCLASS.
